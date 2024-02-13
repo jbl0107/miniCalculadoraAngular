@@ -1,0 +1,30 @@
+
+<h1>{{ title }}</h1>
+
+
+<!-- En este caso fue necesario darle un nombre a las cajas de texto para que funcionara el binding del archivo TS al template 
+HTML porque al estar dichos campos dentro de un formulario, por la naturaleza del funcionamiento de un formulario, 
+éstos deben tener un nombre obligatoriamente, si no, no funcionarán correctamente -->
+
+<div class="container">
+<form>
+    <label class="form-label">Numero 1</label>
+    <input type="number" [(ngModel)]="numero1" name="numero1" class="form-control">
+<br/>
+<br/>
+
+    <label class="form-label">Numero 2</label>
+    <input type="number" [(ngModel)]="numero2" name="numero2" class="form-control">
+<br/>
+<br/>
+
+<input type="submit" value="Sumar" class="btn btn-primary boton" (click)="sumar()">
+<input type="submit" value="Restar" class="btn btn-danger boton" (click)="restar()">
+<input type="submit" value="Multiplicar" class="btn btn-warning boton" (click)="multiplicar()">
+<input type="submit" value="Dividir" class="btn btn-success boton" (click)="dividir()">
+
+</form>
+</div>
+
+<br/>
+<p class="resultado">Resultado: {{ resultado }}</p>
